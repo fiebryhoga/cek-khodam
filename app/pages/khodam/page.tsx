@@ -12,7 +12,7 @@ const CekKhodam = () => {
         src="/assets/images/bg-khodam2.jpg"
         alt=""
       />
-      <div className="flex flex-col justify-center items-center h-full w-full z-10">
+      <div className="flex px-6 flex-col justify-center items-center h-full w-full z-10">
         <BoxContainer />
       </div>
     </div>

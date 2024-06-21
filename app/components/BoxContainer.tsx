@@ -42,13 +42,13 @@ const BoxContainer = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-black justify-center rounded-lg bg-opacity-20">
+    <div className="flex flex-col items-center bg-black justify-center rounded-lg bg-opacity-20 w-full">
       {loading ? (
         <LoadingBox name={name} />
       ) : result ? (
         <ResultBox result={result} name={name} onReset={handleReset} />
       ) : (
-        <div className="py-6 px-4 bg-black flex flex-col items-center bg-transparent backdrop-blur-custom border border-white min-h-80 w-[540px] rounded-xl gap-8">
+        <div className="py-6 md:px-4 bg-black flex flex-col items-center bg-transparent backdrop-blur-custom border border-white min-h-[400px] w-full lg:min-h-80 lg:w-[540px] rounded-xl gap-16 lg:gap-8">
           <h1 className="text-lg text-white font-bold tracking-wider">
             Cek Khodam
           </h1>
@@ -57,7 +57,7 @@ const BoxContainer = () => {
               Masukkkan nama untuk melihat khodam
             </p>
             <input
-              className="w-96 py-4 text-sm bg-transparent rounded-full border border-white outline-none px-8 text-white text-opacity-80"
+              className="lg:w-96 py-4 text-sm bg-transparent rounded-full border border-white outline-none px-8 text-white text-opacity-80"
               type="text"
               placeholder="Nama lengkap Target"
               value={name}
@@ -67,7 +67,7 @@ const BoxContainer = () => {
             {error && <p className="text-red-500">{error}</p>}
           </div>
           <div className="flex flex-col justify-center items-center w-full gap-4">
-            <p className="flex gap-2 justify-center items-center px-20 text-white font-medium text-sm">
+            <p className="flex gap-2 justify-center items-center lg:px-20 text-white font-medium text-sm">
               <GiPrayer size={30} color="white" />
               Dimohon membaca Bismillah 3x
             </p>

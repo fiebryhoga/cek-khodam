@@ -8,7 +8,7 @@ interface ResultBoxProps {
 
 const ResultBox: React.FC<ResultBoxProps> = ({ result, name, onReset }) => {
   return (
-    <div className="py-6 px-4 bg-black bg-opacity-30 flex flex-col items-center bg-transparent backdrop-blur-custom border border-white min-h-40 w-[540px] rounded-xl gap-8">
+    <div className="py-6 px-4 bg-black bg-opacity-30 flex flex-col items-center bg-transparent backdrop-blur-custom border border-white min-h-[400px] w-full lg:min-h-40 lg:w-[540px] rounded-xl gap-8">
       <p className="text-white">Khodam anda adalah: {result}</p>
       <p className="text-white">Nama yang diinputkan: {name}</p>
       <button
