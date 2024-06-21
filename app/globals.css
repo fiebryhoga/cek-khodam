@@ -16,18 +16,25 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body, html {
+  background-color: #080F17;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
 }
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+
+.backdrop-blur-custom {
+  @apply flex;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }

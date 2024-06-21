@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -15,6 +16,17 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        ".backdrop-blur-custom": {
+          "backdrop-filter": "blur(6px)",
+          "-webkit-backdrop-filter": "blur(6px)",
+        },
+      };
+
+    }),
+  ],
 };
+
 export default config;
