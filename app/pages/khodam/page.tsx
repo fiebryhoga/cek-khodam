@@ -15,7 +15,7 @@ const CekKhodam = () => {
         src="/assets/images/bg.khodam.jpg"
         alt=""
       />
-      <div className="flex flex-col justify-center items-center h-full w-full z-10">
+      <div className="flex flex-col justify-center items-center h-full w-full z-10 px-6">
         <BoxContainer />
       </div>
 
