@@ -7,7 +7,7 @@ import BoxContainer from "@/app/components/BoxContainer";
 
 const CekKhodam = () => {
   return (
-    <div className="flex h-full w-full flex-row bg-black bg-opacity-10">
+    <div className="flex h-full w-full flex-row bg-green-600 bg-opacity-10">
       <img
         className="w-full h-full absolute object-cover opacity-35 z-0"
         src="/assets/images/bg.khodam.jpg"
