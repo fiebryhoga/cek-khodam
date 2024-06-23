@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GiPrayer } from "react-icons/gi";
 import LoadingBox from "./LoadingBox";
 import ResultBox from "./ResultBox";
@@ -10,6 +10,18 @@ const BoxContainer = () => {
   const [result, setResult] = useState<string | null>(null);
   const [description, setDescription] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [musicPlaying, setMusicPlaying] = useState(false);
+
+  useEffect(() => {
+    if (musicPlaying) {
+      const audio = new Audio("/assets/music/music.mp3");
+      audio.play();
+      return () => {
+        audio.pause();
+        audio.currentTime = 0;
+      };
+    }
+  }, [musicPlaying]);
 
   const handleCheck = () => {
     if (name.length < 2 || name.length > 100) {
@@ -35,13 +47,17 @@ const BoxContainer = () => {
       }
 
       setLoading(false);
-    }, 4000);
+    }, 3000);
   };
 
   const handleKeyDown = (event: { key: string }) => {
     if (event.key === "Enter") {
       handleCheck();
     }
+  };
+
+  const handleInputFocus = () => {
+    setMusicPlaying(true);
   };
 
   const handleReset = () => {
@@ -51,7 +67,7 @@ const BoxContainer = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-white justify-center rounded-lg bg-opacity-5 w-full">
+    <div className="flex flex-col items-center justify-center rounded-lg w-full">
       {loading ? (
         <LoadingBox name={name} />
       ) : result ? (
@@ -62,13 +78,13 @@ const BoxContainer = () => {
           onReset={handleReset}
         />
       ) : (
-        <div className="py-6 md:px-4 bg-black flex flex-col items-center bg-transparent backdrop-blur-custom border border-white min-h-[400px] w-full lg:min-h-80 lg:w-[540px] rounded-xl gap-16 lg:gap-8">
+        <div className="py-6 md:px-4 bg-white bg-opacity-5 flex flex-col items-center bg-transparent backdrop-blur-custom border border-white min-h-[400px] w-full md:min-h-80 md:w-[540px] rounded-xl gap-16 lg:gap-8">
           <h1 className="text-xl text-white font-bold tracking-wider">
             Cek Khodam
           </h1>
           <div className="flex flex-col justify-center items-center w-full gap-4">
             <p className="text-white text-sm font-medium tracking-wide">
-              Masukkkan nama untuk melihat khodam
+              Masukkan nama untuk melihat khodam
             </p>
             <input
               className="lg:w-96 py-4 text-sm bg-transparent rounded-full border border-white outline-none px-8 text-white text-opacity-80"
@@ -76,6 +92,7 @@ const BoxContainer = () => {
               placeholder="Nama"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onFocus={handleInputFocus}
               onKeyDown={handleKeyDown}
             />
             {error && <p className="text-red-500">{error}</p>}

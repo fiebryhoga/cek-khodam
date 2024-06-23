@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import BoxContainer from "@/app/components/BoxContainer";
 import Footer from "@/app/components/layouts/Footer";
 
 const CekKhodam = () => {
+
+
   return (
     <div className="relative h-full w-full flex flex-col bg-black bg-opacity-10">
       <img
@@ -13,7 +15,7 @@ const CekKhodam = () => {
         src="/assets/images/bg.khodam.jpg"
         alt=""
       />
-      <div className="flex px-6 flex-col justify-center items-center h-full w-full z-10">
+      <div className="flex flex-col justify-center items-center h-full w-full z-10">
         <BoxContainer />
       </div>
 
@@ -23,3 +25,7 @@ const CekKhodam = () => {
 };
 
 export default CekKhodam;
+
+
+
+
