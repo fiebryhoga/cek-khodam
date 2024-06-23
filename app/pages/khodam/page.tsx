@@ -7,7 +7,7 @@ import Footer from "@/app/components/layouts/Footer";
 
 const CekKhodam = () => {
   return (
-    <div className="flex h-[100vh] w-full flex-row bg-black bg-opacity-10">
+    <div className="flex h-full w-full flex-row bg-black bg-opacity-10">
       <img
         className="w-full h-full absolute object-cover opacity-35 z-0"
         src="/assets/images/bg.khodam.jpg"
