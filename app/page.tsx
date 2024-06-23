@@ -4,7 +4,7 @@ import Footer from "./components/layouts/Footer";
 
 export default function Home() {
   return (
-    <main className=" h-[100vh] w-full flex flex-col justify-center items-center bg-red-700">
+    <main className=" h-[100vh] w-full flex flex-col justify-center items-center">
       <CekKhodam />
       
     </main>
