@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import BoxContainer from "@/app/components/BoxContainer";
-import Footer from "@/app/components/layouts/Footer";
+// import Footer from "@/app/components/layouts/Footer";
 
 const CekKhodam = () => {
   return (
@@ -17,7 +17,7 @@ const CekKhodam = () => {
         <BoxContainer />
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
