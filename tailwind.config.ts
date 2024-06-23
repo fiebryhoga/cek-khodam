@@ -16,17 +16,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    plugin(function ({ addUtilities }) {
-      const newUtilities = {
-        ".backdrop-blur-custom": {
-          "backdrop-filter": "blur(6px)",
-          "-webkit-backdrop-filter": "blur(6px)",
-        },
-      };
-
-    }),
-  ],
 };
 
 export default config;

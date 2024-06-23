@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className=" h-[100vh] w-full flex flex-col justify-center items-center">
       <CekKhodam />
-      <Footer />
+      
     </main>
   );
 }

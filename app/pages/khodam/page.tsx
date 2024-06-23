@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import BoxContainer from "@/app/components/BoxContainer";
-import Link from "next/link";
+import Footer from "@/app/components/layouts/Footer";
 
 const CekKhodam = () => {
   return (
@@ -16,7 +16,8 @@ const CekKhodam = () => {
       <div className="flex px-6 flex-col justify-center items-center h-full w-full z-10">
         <BoxContainer />
       </div>
-      
+
+      <Footer />
     </div>
   );
 };
